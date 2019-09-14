@@ -23,10 +23,11 @@ namespace llvm {
   struct SecDev : public ModulePass, InstVisitor<SecDev> {
     // Pass identifier variable
     static char ID;
-    SecDev() : ModulePass(ID) {}
 
     // Module public methods
+    SecDev() : ModulePass(ID) {}
     bool runOnModule (Module & M);
+    StringRef getPassName() const { return "LLVM Tutorial Pass";}
 
     // Methods for transforming different instructions
     void visitLoadInst (LoadInst & LI);
