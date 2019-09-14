@@ -12,6 +12,7 @@
 //
 //===----------------------------------------------------------------------===//
 
+#include "llvm/ADT/Statistic.h"
 #include "llvm/IR/Module.h"
 #include "llvm/Pass.h"
 #include "llvm/Transforms/Scalar/SecDev.h"
@@ -19,6 +20,92 @@
 using namespace llvm;
 
 #define DEBUG_TYPE "secdev"
+
+//
+// Create statistics that the opt and clang tools can report
+//
+STATISTIC(NumLoads,  "Number of load instructions instrumented");
+STATISTIC(NumStores, "Number of store instructions instrumented");
+STATISTIC(NumCalls,  "Number of call instructions instrumented");
+
+//
+// Method: visitLoadInst()
+//
+// Description:
+//  Add a call to a library function before every load instruction.  This
+//  method is called by the InstVisitor class whenever it encounters a load
+//  instruction.
+//
+// Inputs:
+//  LI - A reference to the load instruction to transform.
+//
+// Outputs:
+//  None.
+//
+// Return value:
+//  None
+//
+void
+SecDev::visitLoadInst (LoadInst & LI) {
+  //
+  // Increment the count of load instructions that have been instrumented.
+  //
+  ++NumLoads;
+  return;
+}
+
+//
+// Method: visitStoreInst()
+//
+// Description:
+//  Add a call to a library function before every store instruction.  This
+//  method is called by the InstVisitor class whenever it encounters a store
+//  instruction.
+//
+// Inputs:
+//  SI - A reference to the store instruction to transform.
+//
+// Outputs:
+//  None.
+//
+// Return value:
+//  None
+//
+void
+SecDev::visitStoreInst (StoreInst & SI) {
+  //
+  // Increment the count of store instructions that have been instrumented.
+  //
+  ++NumStores;
+  return;
+}
+
+//
+// Method: visitCallInst()
+//
+// Description:
+//  Add a call to a library function before every indirect call instruction.
+//  This method is called by the InstVisitor class whenever it encounters a
+//  call instruction.
+//
+// Inputs:
+//  CI - A reference to the call instruction to transform.
+//
+// Outputs:
+//  None.
+//
+// Return value:
+//  None
+//
+
+void
+SecDev::visitCallInst (CallInst & CI) {
+  //
+  // Increment the count of call instructions that have been instrumented.
+  //
+  ++NumCalls;
+  return;
+}
 
 //
 // Method: runOnModule()
@@ -40,7 +127,14 @@ using namespace llvm;
 //
 bool
 SecDev::runOnModule (Module & M) {
-   // Assume that we have modified the module
+  //
+  // Scan all of the instructions within the module to determine if we need to
+  // transform them.  If so, call the appropriate visit method to transform
+  // the instruction.
+  //
+  visit(M);
+
+  // Assume that we have modified the module
   return true;
 }
 

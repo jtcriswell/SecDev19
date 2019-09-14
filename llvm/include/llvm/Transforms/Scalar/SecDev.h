@@ -15,17 +15,23 @@
 #ifndef LLVM_TRANSFORMS_SCALAR_SECDEV_H
 #define LLVM_TRANSFORMS_SCALAR_SECDEV_H
 
+#include "llvm/IR/InstVisitor.h"
 #include "llvm/IR/PassManager.h"
 
 namespace llvm {
 
-  struct SecDev : public ModulePass {
+  struct SecDev : public ModulePass, InstVisitor<SecDev> {
     // Pass identifier variable
     static char ID;
     SecDev() : ModulePass(ID) {}
 
     // Module public methods
     bool runOnModule (Module & M);
+
+    // Methods for transforming different instructions
+    void visitLoadInst (LoadInst & LI);
+    void visitStoreInst (StoreInst & SI);
+    void visitCallInst (CallInst & CI);
   };
 
   ModulePass * createSecDevPass();
