@@ -31,6 +31,26 @@ STATISTIC(NumLoads,  "Number of load instructions instrumented");
 STATISTIC(NumStores, "Number of store instructions instrumented");
 STATISTIC(NumCalls,  "Number of call instructions instrumented");
 
+//
+// Function: createRuntimeCheckFunc()
+//
+// Description:
+//  This function creates the declaration of the checkMemory function that
+//  checks the pointer dereferenced in a load or store instruction at run-time.
+//  If the checkMemory function is already declared or defined within the
+//  specified Module, a pointer to it is returned.
+//
+// Inputs:
+//  M - A reference to the Module to which the checkMemory function declaration
+//      should be added.
+//
+// Outputs:
+//  M - The Module modified (if necessary) to contain a checkMemory function
+//      declaration.
+//
+// Return value:
+//  A pointer to the checkMemory function is returned.
+//
 Function *
 createRuntimeCheckFunc (Module & M) {
   //
@@ -136,7 +156,6 @@ SecDev::visitStoreInst (StoreInst * SI) {
 // Return value:
 //  None
 //
-
 void
 SecDev::visitCallInst (CallInst * CI) {
   //
