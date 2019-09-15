@@ -13,8 +13,11 @@
 //===----------------------------------------------------------------------===//
 
 #include "llvm/ADT/Statistic.h"
+#include "llvm/IR/DerivedTypes.h"
 #include "llvm/IR/Module.h"
+#include "llvm/IR/Type.h"
 #include "llvm/Pass.h"
+#include "llvm/Support/raw_ostream.h"
 #include "llvm/Transforms/Scalar/SecDev.h"
 
 using namespace llvm;
@@ -28,6 +31,21 @@ STATISTIC(NumLoads,  "Number of load instructions instrumented");
 STATISTIC(NumStores, "Number of store instructions instrumented");
 STATISTIC(NumCalls,  "Number of call instructions instrumented");
 
+Function *
+createRuntimeCheckFunc (Module & M) {
+  //
+  // Create the types needed for the declaration.
+  //
+  Type * VoidType = Type::getVoidTy(M.getContext());
+  Type * CharType = IntegerType::get(M.getContext(), 8);
+  Type * VoidPtrType = PointerType::getUnqual(CharType);
+  FunctionType * FuncType = FunctionType::get(VoidType, ArrayRef<Type *>(VoidPtrType), false);
+
+  //
+  // Create the run-time check function.
+  return cast<Function>(M.getOrInsertFunction ("checkMemory", FuncType));
+}
+
 //
 // Method: visitLoadInst()
 //
@@ -37,7 +55,7 @@ STATISTIC(NumCalls,  "Number of call instructions instrumented");
 //  instruction.
 //
 // Inputs:
-//  LI - A reference to the load instruction to transform.
+//  LI - A pointer to the load instruction to transform.
 //
 // Outputs:
 //  None.
@@ -46,7 +64,7 @@ STATISTIC(NumCalls,  "Number of call instructions instrumented");
 //  None
 //
 void
-SecDev::visitLoadInst (LoadInst & LI) {
+SecDev::visitLoadInst (LoadInst * LI) {
   //
   // Increment the count of load instructions that have been instrumented.
   //
@@ -63,7 +81,7 @@ SecDev::visitLoadInst (LoadInst & LI) {
 //  instruction.
 //
 // Inputs:
-//  SI - A reference to the store instruction to transform.
+//  SI - A pointer to the store instruction to transform.
 //
 // Outputs:
 //  None.
@@ -72,7 +90,7 @@ SecDev::visitLoadInst (LoadInst & LI) {
 //  None
 //
 void
-SecDev::visitStoreInst (StoreInst & SI) {
+SecDev::visitStoreInst (StoreInst * SI) {
   //
   // Increment the count of store instructions that have been instrumented.
   //
@@ -89,7 +107,7 @@ SecDev::visitStoreInst (StoreInst & SI) {
 //  call instruction.
 //
 // Inputs:
-//  CI - A reference to the call instruction to transform.
+//  CI - A pointer to the call instruction to transform.
 //
 // Outputs:
 //  None.
@@ -99,7 +117,7 @@ SecDev::visitStoreInst (StoreInst & SI) {
 //
 
 void
-SecDev::visitCallInst (CallInst & CI) {
+SecDev::visitCallInst (CallInst * CI) {
   //
   // Increment the count of call instructions that have been instrumented.
   //
@@ -128,11 +146,30 @@ SecDev::visitCallInst (CallInst & CI) {
 bool
 SecDev::runOnModule (Module & M) {
   //
+  // Add a declaration of the run-time check functions.
+  //
+  checkMemory = createRuntimeCheckFunc(M);
+
+  //
   // Scan all of the instructions within the module to determine if we need to
   // transform them.  If so, call the appropriate visit method to transform
   // the instruction.
   //
-  visit(M);
+  for (Module::iterator fi = M.begin(); fi != M.end(); ++fi) {
+    for (Function::iterator bi = fi->begin(); bi != fi->end(); ++bi) {
+      for (BasicBlock::iterator it = bi->begin(); it != bi->end(); ++it) {
+        Instruction * I = &*it;
+
+        //
+        // If this is a load instruction, instrument it with a call to the
+        // function that checks the pointer used in the load.
+        //
+        if (LoadInst * LI = dyn_cast<LoadInst>(I)) {
+          visitLoadInst(LI);
+        }
+      }
+    }
+  }
 
   // Assume that we have modified the module
   return true;
