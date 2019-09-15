@@ -39,10 +39,13 @@ createRuntimeCheckFunc (Module & M) {
   Type * VoidType = Type::getVoidTy(M.getContext());
   Type * CharType = IntegerType::get(M.getContext(), 8);
   Type * VoidPtrType = PointerType::getUnqual(CharType);
-  FunctionType * FuncType = FunctionType::get(VoidType, ArrayRef<Type *>(VoidPtrType), false);
+  FunctionType * FuncType = FunctionType::get(VoidType,
+                                              ArrayRef<Type *>(VoidPtrType),
+                                              false);
 
   //
   // Create the run-time check function.
+  //
   return cast<Function>(M.getOrInsertFunction ("checkMemory", FuncType));
 }
 
