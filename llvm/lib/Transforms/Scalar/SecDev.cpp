@@ -32,6 +32,33 @@ STATISTIC(NumStores, "Number of store instructions instrumented");
 STATISTIC(NumCalls,  "Number of call instructions instrumented");
 
 //
+// Function: getVoidPtrType()
+//
+// Description:
+//  Return a pointer to the void pointer type that belongs to the specified
+//  LLVM Context.  In LLVM IR, a void pointer type is a pointer to an 8-bit
+//  value (i.e., a "char *" in C).
+//
+// Inputs:
+//  C - A reference to the LLVM Context in which to create or retrieve the
+//      void pointer type.
+//
+// Outputs:
+//  None.
+//
+// Return value:
+//  A pointer to the void pointer type is returned.
+//
+static PointerType *
+getVoidPtrType (LLVMContext & C) {
+  //
+  // Create an integer type that is 8-bits in size and then create a pointer
+  // type that pointers to this integer type.
+  //
+  return (PointerType::getUnqual(IntegerType::get(C, 8)));
+}
+
+//
 // Function: createRuntimeCheckFunc()
 //
 // Description:
@@ -57,8 +84,7 @@ createRuntimeCheckFunc (Module & M) {
   // Create the types needed for the declaration.
   //
   Type * VoidType = Type::getVoidTy(M.getContext());
-  Type * CharType = IntegerType::get(M.getContext(), 8);
-  Type * VoidPtrType = PointerType::getUnqual(CharType);
+  Type * VoidPtrType = getVoidPtrType(M.getContext());
   FunctionType * FuncType = FunctionType::get(VoidType,
                                               ArrayRef<Type *>(VoidPtrType),
                                               false);
@@ -96,9 +122,9 @@ SecDev::visitLoadInst (LoadInst * LI) {
   //
   // Cast the pointer argument of the load instruction to our void pointer
   // type.
-  Type * CharType = IntegerType::get(LI->getContext(), 8);
-  Type * VoidPtrType = PointerType::getUnqual(CharType);
-  Pointer = new BitCastInst(Pointer, VoidPtrType, Pointer->getName(), LI);
+  //
+  LLVMContext & C = LI->getContext();
+  Pointer = new BitCastInst(Pointer, getVoidPtrType(C), Pointer->getName(), LI);
 
   //
   // Insert a call instruction to the check memory function before the load
