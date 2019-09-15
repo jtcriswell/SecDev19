@@ -69,6 +69,24 @@ createRuntimeCheckFunc (Module & M) {
 void
 SecDev::visitLoadInst (LoadInst * LI) {
   //
+  // Retrieve the pointer operand from the load instruction.
+  //
+  Value * Pointer = LI->getPointerOperand();
+
+  //
+  // Cast the pointer argument of the load instruction to our void pointer
+  // type.
+  Type * CharType = IntegerType::get(LI->getContext(), 8);
+  Type * VoidPtrType = PointerType::getUnqual(CharType);
+  Pointer = new BitCastInst(Pointer, VoidPtrType, Pointer->getName(), LI);
+
+  //
+  // Insert a call instruction to the check memory function before the load
+  // instruction.
+  //
+  CallInst::Create(checkMemory, ArrayRef<Value*>(Pointer), "", LI);
+
+  //
   // Increment the count of load instructions that have been instrumented.
   //
   ++NumLoads;
@@ -170,6 +188,13 @@ SecDev::runOnModule (Module & M) {
         if (LoadInst * LI = dyn_cast<LoadInst>(I)) {
           visitLoadInst(LI);
         }
+
+        //
+        // If this is a store instruction, instrument it with a call to the
+        // function that checks the pointer used in the store.
+        //
+        // TODO: Write this code.
+        //
       }
     }
   }
