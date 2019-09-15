@@ -51,7 +51,7 @@ STATISTIC(NumCalls,  "Number of call instructions instrumented");
 // Return value:
 //  A pointer to the checkMemory function is returned.
 //
-Function *
+static Function *
 createRuntimeCheckFunc (Module & M) {
   //
   // Create the types needed for the declaration.
