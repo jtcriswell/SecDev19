@@ -15,8 +15,8 @@
 #ifndef LLVM_TRANSFORMS_SCALAR_SECDEV_H
 #define LLVM_TRANSFORMS_SCALAR_SECDEV_H
 
-#include "llvm/IR/Instructions.h"
-#include "llvm/IR/PassManager.h"
+#include <llvm/IR/Instructions.h>
+#include <llvm/IR/PassManager.h>
 
 namespace llvm {
 
