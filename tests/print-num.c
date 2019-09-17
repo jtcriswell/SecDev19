@@ -1,7 +1,5 @@
 #include <stdio.h>
 
-#include "test-utils.h"
-
 int main() {
     volatile int x = 42;
 
