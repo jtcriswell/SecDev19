@@ -1,0 +1,3 @@
+#! /bin/sh
+
+exec opt -load ./SecDev.so -secdev "$@"
