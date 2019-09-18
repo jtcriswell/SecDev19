@@ -10,7 +10,7 @@ for file in tests/*.c
 do
     f="$(basename "$file")"
     f="${f%.c}"
-    clang -O0 -c -emit-llvm "tests/$f.c" -o "run/$f.bc"
+    clang -O2 -Xclang -disable-llvm-passes -c -emit-llvm "tests/$f.c" -o "run/$f.bc"
     opt -load ./SecDev.so -mem2reg -secdev "run/$f.bc" -o "run/$f.instrumented.bc"
     clang -L./lib "run/$f.instrumented.bc" -o "run/$f" -lsecdevchecker
 done
