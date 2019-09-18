@@ -1,5 +1,5 @@
 #include <stdio.h>
 
 void checkMemory(void* ptr) {
-    printf("Checking pointer value %p\n", ptr);
+    fprintf(stderr, "Checking pointer value %p\n", ptr);
 }
