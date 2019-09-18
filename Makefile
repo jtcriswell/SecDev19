@@ -1,3 +1,5 @@
+WARNFLAGS := -Wall -Wextra -pedantic
+CPPFLAGS := $(WARNFLAGS)
 CXXFLAGS := -g -Og -fpic -fno-rtti -fno-exceptions
 
 OBJS := SecDev.o lib/secdevchecker.o
