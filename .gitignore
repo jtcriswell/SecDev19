@@ -2,3 +2,6 @@
 *.o
 *.so
 *.a
+
+# Test output
+run/

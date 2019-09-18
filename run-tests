@@ -1,0 +1,16 @@
+#! /bin/sh
+
+set -e
+set -u
+
+rm -rf run
+mkdir run
+
+for file in tests/*.c
+do
+    f="$(basename "$file")"
+    f="${f%.c}"
+    clang -O0 -c -emit-llvm "tests/$f.c" -o "run/$f.bc"
+    opt -load ./SecDev.so -mem2reg -secdev "run/$f.bc" -o "run/$f.instrumented.bc"
+    clang -L. "run/$f.instrumented.bc" -o "run/$f" -lsecdevchecker
+done

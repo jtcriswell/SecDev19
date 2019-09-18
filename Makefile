@@ -13,6 +13,6 @@ SecDev.so: $(OBJS)
 SecDev.o: SecDev.cpp SecDev.h
 
 clean:
-	rm -rf $(OBJS) SecDev.so
+	rm -rf $(OBJS) SecDev.so run/
 
 .PHONY: all clean
