@@ -4,7 +4,7 @@ _Copyright 2019 University of Rochester
 John Criswell, Ethan Johnson, and Colin Pronovost_
 
 This repository contains everything you need to get started with the LLVM tutorial at SecDev 2019.
-The custom LLVM pass you will create can be build with the provided makefile (just type `make`) and
+The custom LLVM pass you will create can be built with the provided makefile (just type `make`) and
 run with the provided `run-pass` script. A VM image with all of the prerequisites you will need to
 build your pass can be found here (TODO: Add link to VM image).
 
