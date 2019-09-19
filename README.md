@@ -250,7 +250,7 @@ of your VM on the local network (if you are using bridged networking).
 
 > ***Tip:*** *If you don't know what kind of networking your VM is using, you
 > are probably using NAT. We recommend using NAT if you're on a laptop that
-> connect to the Internet wirelessly, especially if you're on the conference
+> connects to the Internet wirelessly, especially if you're on the conference
 > network. Bridged networking makes the VM appear as a separate computer on
 > the physical network your host machine is connected to, which means you
 > need to register it separately on the hotel Wi-Fi. That usually requires a
