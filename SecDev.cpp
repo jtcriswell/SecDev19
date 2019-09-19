@@ -160,6 +160,24 @@ SecDev::visitLoadInst (LoadInst * LI) {
 void
 SecDev::visitStoreInst (StoreInst * SI) {
   //
+  // Retrieve the pointer operand from the store instruction.
+  //
+  Value * Pointer = SI->getPointerOperand();
+
+  //
+  // Cast the pointer argument of the store instruction to our void pointer
+  // type.
+  //
+  LLVMContext & C = SI->getContext();
+  Pointer = new BitCastInst(Pointer, getVoidPtrType(C), Pointer->getName(), SI);
+
+  //
+  // Insert a call instruction to the check memory function before the store
+  // instruction.
+  //
+  CallInst::Create(checkMemory, ArrayRef<Value*>(Pointer), "", SI);
+
+  //
   // Increment the count of store instructions that have been instrumented.
   //
   ++NumStores;
@@ -239,8 +257,9 @@ SecDev::runOnModule (Module & M) {
         // If this is a store instruction, instrument it with a call to the
         // function that checks the pointer used in the store.
         //
-        // TODO: Write this code.
-        //
+        if (StoreInst * SI = dyn_cast<StoreInst>(I)) {
+          visitStoreInst(SI);
+        }
       }
     }
   }
