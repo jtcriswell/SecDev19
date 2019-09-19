@@ -30,7 +30,6 @@ using namespace llvm;
 //
 STATISTIC(NumLoads,  "Number of load instructions instrumented");
 STATISTIC(NumStores, "Number of store instructions instrumented");
-STATISTIC(NumCalls,  "Number of call instructions instrumented");
 
 //
 // Function: getVoidPtrType()
@@ -181,32 +180,6 @@ SecDev::visitStoreInst (StoreInst * SI) {
   // Increment the count of store instructions that have been instrumented.
   //
   ++NumStores;
-  return;
-}
-
-//
-// Method: visitCallInst()
-//
-// Description:
-//  Add a call to a library function before every indirect call instruction.
-//  This method is called by the InstVisitor class whenever it encounters a
-//  call instruction.
-//
-// Inputs:
-//  CI - A pointer to the call instruction to transform.
-//
-// Outputs:
-//  None.
-//
-// Return value:
-//  None
-//
-void
-SecDev::visitCallInst (CallInst * CI) {
-  //
-  // Increment the count of call instructions that have been instrumented.
-  //
-  ++NumCalls;
   return;
 }
 
