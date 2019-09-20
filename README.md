@@ -323,7 +323,7 @@ and use the VM" above) and performed the following steps:
   default user
 * Installed package `tmux`
 * Installed packages `git`, `cmake`, `gcc`, `g++`, and `gdb`
-* Installed package [sl](https://man.cx/sl(6\)) *(not required, this is just for fun :-))*
+* Installed package [sl](https://man.cx/sl%286%29) *(not required, this is just for fun :-))*
 * Downloaded, compiled from source, and installed LLVM+Clang 8.0.1 (see
   below)
 
