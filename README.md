@@ -3,10 +3,12 @@
 _Copyright 2019 University of Rochester  
 John Criswell, Ethan Johnson, and Colin Pronovost_
 
-This repository contains everything you need to get started with the LLVM tutorial at SecDev 2019.
-The custom LLVM pass you will create can be built with the provided makefile (just type `make`) and
-run with the provided `run-pass` script. A VM image with all of the prerequisites you will need to
-build your pass can be found here (TODO: Add link to VM image).
+This repository contains everything you need to get started with the LLVM
+tutorial at SecDev 2019.  The custom LLVM pass you will create can be built
+with the provided makefile (just type `make` from the repository root, which
+is at `~/src/SecDev19` in the provided virtual machine) and compile the
+included test programs with your pass using the provided `compile-tests`
+script.
 
 ## Virtual Machine Image for Tutorial
 
@@ -21,8 +23,8 @@ Virtualization Framework (OVF) appliance package:
 
 [Click to download SecDev19TutorialVM\_1.0.0.ova (**2.9 GB**)](https://cs.rochester.edu/u/ejohns48/secdev19/SecDev19TutorialVM_1.0.0.ova)
 
-This VM image was created and tested with VirtualBox (v5.1.38, to be exact);
-it should also work well with VMWare products (though we haven't tested that).
+This VM image was created and tested with VirtualBox; it should also work
+well with VMWare products (though we haven't tested that).
 
 It will probably work with other virtualization platforms as well (e.g.
 Parallels, Hyper-V, QEMU/KVM), but they may or may not provide good support
