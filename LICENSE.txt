@@ -1,0 +1,76 @@
+==============================================================================
+LLVM Tutorial for SecDev 2019 - Lab Materials
+Release License
+==============================================================================
+
+University of Illinois/NCSA
+Open Source License
+
+Copyright (c) 2019 University of Rochester.
+All rights reserved.
+
+Developed by:
+
+    John Criswell, University of Rochester
+    Ethan Johnson, University of Rochester
+    Colin Pronovost, Univeristy of Rochester
+
+    https://github.com/jtcriswell/SecDev19
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+with the Software without restriction, including without limitation the
+rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+sell copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+    * Redistributions of source code must retain the above copyright notice,
+      this list of conditions and the following disclaimers.
+
+    * Redistributions in binary form must reproduce the above copyright notice,
+      this list of conditions and the following disclaimers in the
+      documentation and/or other materials provided with the distribution.
+
+    * Neither the names of the University of Rochester, nor the names
+      of its contributors may be used to endorse or promote products derived
+      from this Software without specific prior written permission.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
+CONTRIBUTORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS WITH
+THE SOFTWARE.
+
+==============================================================================
+Copyrights and Licenses for Third Party Software Distributed in the
+Associated Virtual Machine Image:
+==============================================================================
+
+The virtual machine image associated with this software distribution contains
+code written by third parties. Such software is licensed separately and
+independently from the software distribution here.
+
+In particular, the virtual machine image contains:
+
+* The Ubuntu operating system, version 18.04.3. For information about how
+  Ubuntu and the software included with it is licensed, see
+  https://ubuntu.com/licensing.
+
+* The LLVM Compiler Infrastructure. The LLVM source code repository, checked
+  out from https://github.com/llvm/llvm-project as of September 18, 2019, is
+  located at /home/user/src/llvm-project within the virtual machine image.
+  Licensing information for LLVM can be found at
+  /home/user/src/llvm-project/README.txt and
+  /home/user/src/llvm-project/LICENSE.txt.
+
+  A binary version of LLVM version 8.0.1, compiled from this copy of the
+  source code, has been installed within the virtual machine image.
+
+The disclaimer of warranty in the University of Illinois Open Source License
+applies to all code in this software distribution, and nothing in any of the
+other licenses gives permission to use the names of the University of
+Rochester or its contributors to endorse or promote products derived from
+this Software.
+
