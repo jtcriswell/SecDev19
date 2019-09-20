@@ -6,8 +6,8 @@ John Criswell, Ethan Johnson, and Colin Pronovost_
 This repository contains everything you need to get started with the LLVM
 tutorial at SecDev 2019.  The custom LLVM pass you will create can be built
 with the provided makefile (just type `make` from the repository root, which
-is at `~/src/SecDev19` in the provided virtual machine) and compile the
-included test programs with your pass using the provided `compile-tests`
+is at `~/src/SecDev19` in the provided virtual machine), and you can compile
+the included test programs with your pass using the provided `compile-tests`
 script.
 
 ## Virtual Machine Image for Tutorial
