@@ -109,7 +109,7 @@ from using it.
 > "Pro" or server editions of Windows.*
 > 
 > *Beware - apparently some recent versions of KVM on Linux also like to
-> "claim" the hypervisor at boot.*
+> "claim" the hardware virtualization extensions at boot.*
 
 (This might go without saying, but if your system isn't x86-based, you can't
 run VirtualBox on it. You might be able to run our VM on other platforms
@@ -136,22 +136,23 @@ the following credentials:
 * Username: `user`
 * Password: `llvm is cool`
 
-> ***WARNING:*** There is an SSH server installed and running on the VM! As long
-as you're running the VM's networking in NAT mode (which is the default on
-most virtualization platforms, and probably sensible if you're on the
-conference Wi-Fi), this shouldn't pose a risk because you can only access the
-SSH server from localhost on the VM. But if you intend to set up port
-forwarding so you can SSH into the VM (see "SSHing into the VM" below),
-**please** make sure you change the password before doing so! You can change
-the password by running the `passwd` command after logging in.
+> ***WARNING:*** There is an SSH server installed and running on the VM! **As
+long as you're running the VM's networking in NAT mode** (which is the
+default on most virtualization platforms, and probably sensible if you're on
+the conference Wi-Fi), **this shouldn't pose a risk** because you can only
+access the SSH server from localhost on the VM. But **if you intend to set up
+port forwarding** so you can SSH into the VM (see "SSHing into the VM"
+below), **please make sure you change the password before doing so!** You can
+change the password by running the `passwd` command after logging in.
 
 This user is authorized for administrative access, so you can run commands as
-root by prefixing them with `sudo` or run `sudo su` to get a root shell. (You
-should not need to use root for anything we're doing in this tutorial, unless
-you want to install additional packages for personal preference.) The `root`
+root by prefixing them with `sudo` or run `sudo su` to get a root shell.
+Enter the password for the regular user when prompted by `sudo`. (You should
+not need to use root for anything we're doing in this tutorial, unless you
+want to install additional packages for personal preference.) The `root`
 account per se is disabled, as it is unnecessary in this configuration. (If
-you want to enable it anyway, you probably don't need our instructions for how
-to do it. :-))
+you want to enable it anyway, you probably don't need our instructions for
+how to do it. :-))
 
 The following text editors are pre-installed:
 
