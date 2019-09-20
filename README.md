@@ -21,7 +21,9 @@ symbols compiled into LLVM) in case you want to debug your pass with GDB.
 The VM image can be downloaded from the following link, as an Open
 Virtualization Framework (OVF) appliance package:
 
-[Click to download SecDev19TutorialVM\_1.0.1.ova (**2.9 GB**)](https://cs.rochester.edu/u/ejohns48/secdev19/SecDev19TutorialVM_1.0.1.ova)
+[Click to download SecDev19TutorialVM\_1.0.1.ova (**2.9 GB download, extracts
+to 7.0
+GB**)](https://cs.rochester.edu/u/ejohns48/secdev19/SecDev19TutorialVM_1.0.1.ova)
 
 This VM image was created and tested with VirtualBox; it should also work
 well with VMWare products (though we haven't tested that).
@@ -38,9 +40,9 @@ supported by most virtualization platforms.
 
 In case you're having trouble unpacking the .ova file (or can't use a
 compressed .vmdk for whatever reason), we've also put a standalone
-uncompressed .vmdk file up for download here:
-[SecDev19TutorialVM\_1.0.1\_diskonly.vmdk (**7.0
-GB**)](https://cs.rochester.edu/u/ejohns48/secdev19/SecDev19TutorialVM_1.0.1_diskonly.vmdk)
+uncompressed .vmdk file (compressed in a .zip file) up for download here:
+[SecDev19TutorialVM\_1.0.1\_diskonly.vmdk.zip (**2.8 GB download, extracts to 7.0
+GB**)](https://cs.rochester.edu/u/ejohns48/secdev19/SecDev19TutorialVM_1.0.1_diskonly.vmdk.zip)
 
 If you're setting up the disk image in a VM manually, see the section
 "Technical details about the VM's default configuration" below for
