@@ -19,7 +19,8 @@ version as of this writing), along with the source code (and debugging
 symbols compiled into LLVM) in case you want to debug your pass with GDB.
 
 The VM image can be downloaded from the following link, as an Open
-Virtualization Framework (OVF) appliance package:
+Virtualization Framework (OVF) appliance package which can be automatically
+imported into many popular virtualization platforms:
 
 [Click to download SecDev19TutorialVM\_1.0.1.ova (**2.9 GB download, extracts
 to 7.0
