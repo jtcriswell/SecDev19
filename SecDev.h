@@ -33,14 +33,10 @@ namespace llvm {
     private:
       // Private variables for this pass
       Function * checkMemory;
-#if 0
-      Function * checkCall;
-#endif
 
       // Methods for transforming different instructions
       void visitLoadInst (LoadInst * LI);
       void visitStoreInst (StoreInst * SI);
-      void visitCallInst (CallInst * CI);
   };
 
   ModulePass * createSecDevPass();
