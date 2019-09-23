@@ -55,7 +55,7 @@ VM"](https://github.com/jtcriswell/SecDev19/blob/master/docs/loginanduse.md)**
 
 We compiled LLVM with debugging symbols enabled (in case you want to debug
 your pass in `gdb`) but Clang without them (to save disk space). We also
-built LLVM in the "shared libs configuration" (`-DBUILD_SHARED_LIBS` when
+built LLVM in the "shared libs configuration" (`-DBUILD_SHARED_LIBS=true` when
 running `cmake`), which compiles core LLVM components into several shared
 library files and links all the tools (`clang`, `opt`, `llc`, etc.)
 dynamically to those. This is not normally the way LLVM is distributed for
