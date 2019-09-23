@@ -29,7 +29,7 @@ GB**)](https://cs.rochester.edu/u/ejohns48/secdev19/SecDev19TutorialVM_1.0.2.ova
 This VM image was created and tested with VirtualBox; it should also work
 well with VMWare products (though we haven't tested that).
 
-It will probably work with other virtualization platforms as well (e.g.
+> *Our VM will probably work with other virtualization platforms as well (e.g.
 Parallels, Hyper-V, QEMU/KVM), but they may or may not provide good support
 for importing OVF appliances, in which case you'll need to unpack the .ova
 file yourself and build a VM around the disk image within it. An .ova is
@@ -37,21 +37,22 @@ file yourself and build a VM around the disk image within it. An .ova is
 archive](https://en.wikipedia.org/wiki/Open_Virtualization_Format) which
 contains a VM disk image and metadata about how the VM should be configured.
 Our .ova file contains a compressed VMDK (VMWare) format disk image, which is
-supported by most virtualization platforms.
+supported by most virtualization platforms.*
 
 In case you're having trouble unpacking the .ova file (or can't use a
-compressed .vmdk for whatever reason), we've also put a standalone
-uncompressed .vmdk file (compressed in a .zip file) up for download here:
+compressed .vmdk for whatever reason), we've also put a **standalone
+uncompressed .vmdk file** (compressed in a .zip file) up for download here:
 [SecDev19TutorialVM\_1.0.2\_diskonly.vmdk.zip (**3.0 GB download, extracts to 7.0
 GB**)](https://cs.rochester.edu/u/ejohns48/secdev19/SecDev19TutorialVM_1.0.2_diskonly.vmdk.zip)
 
-If you're setting up the disk image in a VM manually, see the section
-"Technical details about the VM's default configuration" below for
-information on what the disk image is expecting its virtual PC to look like.
-Linux is pretty forgiving of significant hardware changes, so you can
-generally get away with not setting up your VM exactly the way we did (e.g.,
-IDE or virtio instead of a virtual SATA disk, or a different model network
-card).
+> *If you're setting up the disk image in a VM manually, see the section*
+***["Technical details about the VM's default
+configuration"](https://github.com/jtcriswell/SecDev19/blob/master/docs/vmspecs.md)***
+*below for information on what the disk image is expecting its virtual PC to
+look like. Linux is pretty forgiving of significant hardware changes, so you
+can generally get away with not setting up your VM exactly the way we did
+(e.g., IDE or virtio instead of a virtual SATA disk, or a different model
+network card).*
 
 If you haven't used virtualization software before (or aren't particularly
 invested in the software you currently have), we recommend using VirtualBox,
