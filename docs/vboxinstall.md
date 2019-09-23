@@ -5,25 +5,27 @@ Solaris(!). (The open-source version apparently supports FreeBSD hosts as
 well, although I didn't see binary packages for it. Maybe it's available from
 the ports tree.)
 
-For Windows and macOS, download VirtualBox from its official website:
+**For Windows and macOS**, download VirtualBox from its official website:
 https://www.virtualbox.org/
 
-For Linux hosts, you can usually install VirtualBox from your distribution's
+**For Linux hosts**, you can usually install VirtualBox from your distribution's
 package manager.
 
 ***NOTE:*** VirtualBox needs to use your CPU's hardware virtualization
 support (Intel VMX/VT-x or AMD-V/SVM) to virtualize 64-bit guests. This
 implies a few things:
 
-1. You need to have a 64-bit x86 CPU with hardware virtualization support.
+1. **You need to have a 64-bit x86 CPU with hardware virtualization
+   support.**
    Most modern x86-based computers have this, but if you don't, things might
    not work so well for you. If you're running a 32-bit OS on a
    64-bit-capable x86 CPU with hardware virtualization support, you can
    sometimes get away with running a 64-bit VM, but it doesn't always work
    consistently.
 
-2. Only one virtualization system can use your hardware's virtualization
-   platform at a time. It's perfectly fine to have multiple virtualization
+2. **Only one virtualization system can use your hardware's virtualization
+   platform at a time.**
+It's perfectly fine to have multiple virtualization
 platforms installed (e.g. VirtualBox alongside Parallels, VMWare, or
 KVM/QEMU), but only one of them can be *running* at a time.  Some
 virtualization platforms - notably Hyper-V and Xen - are "bare-metal"

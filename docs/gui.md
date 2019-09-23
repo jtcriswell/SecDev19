@@ -16,8 +16,8 @@ just not stuff like LibreOffice, GIMP, etc. that would come with a full
 install.)
 
 Since you probably just want a GUI so you can run multiple terminal windows,
-use your favorite GUI text editor, and use a graphical file manager, we would
-suggest choosing one of the "core" versions. If you aren't sure which one to
+use your favorite GUI text editor, and use a graphical file manager, **we would
+suggest choosing one of the "core" versions**. If you aren't sure which one to
 pick, either MATE or LXDE is probably a good choice, as they're light-weight
 and familiar to users of other operating systems. The MATE Core flavor, for
 instance, takes about ~3.5-4 GB of additional disk space in the VM (and
@@ -25,9 +25,9 @@ probably requires downloading about 1/3 to 1/2 of that).
 
 Choose your preferred GUI and run the corresponding command from this list:
 
-* MATE Core: `sudo tasksel install ubuntu-mate-core`
-* LXDE (Lubuntu) Core: `sudo tasksel install lubuntu-core`
-* XFCE (Xubuntu) Core: `sudo tasksel install xubuntu-core`
+* **MATE Core:** `sudo tasksel install ubuntu-mate-core`
+* **LXDE (Lubuntu) Core:** `sudo tasksel install lubuntu-core`
+* **XFCE (Xubuntu) Core:** `sudo tasksel install xubuntu-core`
 * Unity (standard Ubuntu): `sudo tasksel install ubuntu-desktop`
 * KDE (Kubuntu): `sudo tasksel kubuntu-desktop`
 

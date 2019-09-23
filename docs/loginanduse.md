@@ -3,8 +3,8 @@
 The VM is based on a minimal installation of Ubuntu 18.04.3 Linux (x86-64).
 To minimize the size of the disk image you have to download, it does not have
 a graphical user interface (GUI) installed, although you can easily install
-one from the repositories if you'd like (see "Installing a GUI in the VM"
-below).
+one from the repositories if you'd like (see
+**["Installing a GUI in the VM"](https://github.com/jtcriswell/SecDev19/blob/master/docs/gui.md)**).
 
 If you have at least a passing familiarity with using \*nix systems from the
 terminal, the VM is quite ready for use out of the box. You can log in with
@@ -24,12 +24,13 @@ change the password by running the `passwd` command after logging in.
 
 This user is authorized for administrative access, so you can run commands as
 root by prefixing them with `sudo` or run `sudo su` to get a root shell.
-Enter the password for the regular user when prompted by `sudo`. (You should
-not need to use root for anything we're doing in this tutorial, unless you
-want to install additional packages for personal preference.) The `root`
-account per se is disabled, as it is unnecessary in this configuration. (If
-you want to enable it anyway, you probably don't need our instructions for
-how to do it. :-))
+Enter the password for the regular user when prompted by `sudo`.
+
+> *You should not need to use root for anything we're doing in this tutorial,
+unless you want to install additional packages for personal preference. The
+`root` account per se is disabled, as it is unnecessary in this
+configuration. (If you want to enable it anyway, you probably don't need our
+instructions for how to do it. :-))*
 
 The following text editors are pre-installed:
 
