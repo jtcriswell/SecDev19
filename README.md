@@ -22,9 +22,9 @@ The VM image can be downloaded from the following link, as an Open
 Virtualization Framework (OVF) appliance package which can be automatically
 imported into many popular virtualization platforms:
 
-[Click to download SecDev19TutorialVM\_1.0.1.ova (**2.9 GB download, extracts
+[Click to download SecDev19TutorialVM\_1.0.2.ova (**2.9 GB download, extracts
 to 7.0
-GB**)](https://cs.rochester.edu/u/ejohns48/secdev19/SecDev19TutorialVM_1.0.1.ova)
+GB**)](https://cs.rochester.edu/u/ejohns48/secdev19/SecDev19TutorialVM_1.0.2.ova)
 
 This VM image was created and tested with VirtualBox; it should also work
 well with VMWare products (though we haven't tested that).
@@ -42,8 +42,8 @@ supported by most virtualization platforms.
 In case you're having trouble unpacking the .ova file (or can't use a
 compressed .vmdk for whatever reason), we've also put a standalone
 uncompressed .vmdk file (compressed in a .zip file) up for download here:
-[SecDev19TutorialVM\_1.0.1\_diskonly.vmdk.zip (**2.8 GB download, extracts to 7.0
-GB**)](https://cs.rochester.edu/u/ejohns48/secdev19/SecDev19TutorialVM_1.0.1_diskonly.vmdk.zip)
+[SecDev19TutorialVM\_1.0.2\_diskonly.vmdk.zip (**3.0 GB download, extracts to 7.0
+GB**)](https://cs.rochester.edu/u/ejohns48/secdev19/SecDev19TutorialVM_1.0.2_diskonly.vmdk.zip)
 
 If you're setting up the disk image in a VM manually, see the section
 "Technical details about the VM's default configuration" below for
