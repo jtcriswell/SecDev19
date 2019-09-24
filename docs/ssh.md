@@ -2,7 +2,7 @@
 
 If you don't want to use a GUI or a terminal multiplexer like `tmux` or
 `screen`, you will probably want to SSH into your VM so you can open multiple
-terminal windows (and resize those windows, etc.)
+terminal windows.
 
 The OpenSSH server is already installed and set to run at boot. In order to
 access it from outside the VM, however, you will either need to enable port
