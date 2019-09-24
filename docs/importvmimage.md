@@ -17,12 +17,12 @@ menu (Figure 2).
 *Figure 1: The "Import" button in VirtualBox v6.x*
 
 ![screenshot of "Import" button in VirtualBox
-v6.x](https://cs.rochester.edu/u/ejohns48/secdev19/screenshots/01_start_6.png)
+v6.x](https://cs.rochester.edu/u/ejohns48/secdev19/screenshots/import/01_start_6.png)
 
 *Figure 2: The "Import" menu item in VirtualBox v5.x*
 
 ![screenshot of "Import" menu item in VirtualBox
-v5.x](https://cs.rochester.edu/u/ejohns48/secdev19/screenshots/02_start_5.png)
+v5.x](https://cs.rochester.edu/u/ejohns48/secdev19/screenshots/import/02_start_5.png)
 
 2\. **Enter the path to where you downloaded the .ova file or click on the file
    icon (Figure 3) to browse for it (Figure 4).**
@@ -30,12 +30,12 @@ v5.x](https://cs.rochester.edu/u/ejohns48/secdev19/screenshots/02_start_5.png)
 *Figure 3: Browsing for the .ova file*
 
 ![screenshot of "select appliance to import"
-screen](https://cs.rochester.edu/u/ejohns48/secdev19/screenshots/03_specifyfile_6.png)
+screen](https://cs.rochester.edu/u/ejohns48/secdev19/screenshots/import/03_specifyfile_6.png)
 
 *Figure 4: Selecting the .ova file in the file browser*
 
 ![screenshot of selecting an .ova file in the file
-browser](https://cs.rochester.edu/u/ejohns48/secdev19/screenshots/04_selectfile_6.png)
+browser](https://cs.rochester.edu/u/ejohns48/secdev19/screenshots/import/04_selectfile_6.png)
 
 3\. **Select the option to re-randomize the MAC address of the VM's virtual
 network adapter.** The interface for this is slightly different in VirtualBox
@@ -56,12 +56,12 @@ enter a name of your choice.
 *Figure 5: Randomizing the MAC address (VirtualBox v6.x)*
 
 ![screenshot of selecting to randomize the guest MAC in VirtualBox
-v6.x](https://cs.rochester.edu/u/ejohns48/secdev19/screenshots/05_import_6.png)
+v6.x](https://cs.rochester.edu/u/ejohns48/secdev19/screenshots/import/05_import_6.png)
 
 *Figure 6: Randomizing the MAC address (VirtualBox v5.x)*
 
 ![screenshot of selecting to randomize the guest MAC in VirtualBox
-v5.x](https://cs.rochester.edu/u/ejohns48/secdev19/screenshots/06_import_5.png)
+v5.x](https://cs.rochester.edu/u/ejohns48/secdev19/screenshots/import/06_import_5.png)
 
 4\. **Wait for VirtualBox to import the VM (Figure 7).** This will take a few
 minutes, since it needs to extract the roughly 7 GB virtual disk image.
@@ -75,7 +75,7 @@ no more than a few minutes, even on a machine with a conventional hard drive
 *Figure 7: The "Importing Appliance" progress bar*
 
 ![screenshot of "importing appliance" progress
-bar](https://cs.rochester.edu/u/ejohns48/secdev19/screenshots/07_waiting_6.png)
+bar](https://cs.rochester.edu/u/ejohns48/secdev19/screenshots/import/07_waiting_6.png)
 
 5\. **After importation finishes, start the VM (Figure 8).**
 
@@ -85,7 +85,7 @@ installation without a GUI.
 *Figure 8: The "start" button in the VirtualBox GUI*
 
 ![screenshot of the "start" button in the VirtualBox
-GUI](https://cs.rochester.edu/u/ejohns48/secdev19/screenshots/08_done_6.png)
+GUI](https://cs.rochester.edu/u/ejohns48/secdev19/screenshots/import/08_done_6.png)
 
 6\. **When the VM finishes booting, it will display a text login prompt. Log
 in with the user "user" and password "llvm is cool" (Figure 9).**
@@ -96,4 +96,4 @@ you type your password. This is normal on the Linux terminal.
 *Figure 9: Logging into the VM*
 
 ![screenshot of the VM immediately after login, with login credentials
-overlaid](https://cs.rochester.edu/u/ejohns48/secdev19/screenshots/09_running_6.png)
+overlaid](https://cs.rochester.edu/u/ejohns48/secdev19/screenshots/import/09_running_6.png)
