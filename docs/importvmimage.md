@@ -1,6 +1,6 @@
 ### How to import the VM image into VirtualBox
 
-After downloading the .ova file (Open Virtualization framewokr archive) for
+After downloading the .ova file (Open Virtualization framework archive) for
 our tutorial VM from the [home
 page](https://github.com/jtcriswell/SecDev19/blob/master/README.md), follow
 these steps to import the VM into VirtualBox and run it.
@@ -27,7 +27,7 @@ v5.x](https://cs.rochester.edu/u/ejohns48/secdev19/screenshots/02_start_5.png)
 2\. **Enter the path to where you downloaded the .ova file or click on the file
    icon (Figure 3) to browse for it (Figure 4).**
 
-*Figure 3: Locating the .ova file*
+*Figure 3: Browsing for the .ova file*
 
 ![screenshot of "select appliance to import"
 screen](https://cs.rochester.edu/u/ejohns48/secdev19/screenshots/03_specifyfile_6.png)
@@ -67,9 +67,9 @@ v5.x](https://cs.rochester.edu/u/ejohns48/secdev19/screenshots/06_import_5.png)
 minutes, since it needs to extract the roughly 7 GB virtual disk image.
 
 Note that VirtualBox might estimate this to take a long time, e.g. "40
-minutes remaining", but this is because it doesn't know how big the image
-will end up being after decompression. In our experience this took no more
-than a few minutes, even on a machine with a conventional hard drive
+minutes remaining", but this is because it (apparently) doesn't know how big
+the image will end up being after decompression. In our experience this took
+no more than a few minutes, even on a machine with a conventional hard drive
 (non-SSD).
 
 *Figure 7: The "Importing Appliance" progress bar*
