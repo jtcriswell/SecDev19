@@ -18,9 +18,10 @@ long as you're running the VM's networking in NAT mode** (which is the
 default on most virtualization platforms, and probably sensible if you're on
 the conference Wi-Fi), **this shouldn't pose a risk** because you can only
 access the SSH server from localhost on the VM. But **if you intend to set up
-port forwarding** so you can SSH into the VM (see "SSHing into the VM"
-below), **please make sure you change the password before doing so!** You can
-change the password by running the `passwd` command after logging in.
+port forwarding** so you can SSH into the VM (see **["SSHing into the
+VM"](https://github.com/jtcriswell/SecDev19/blob/master/docs/ssh.md)**),
+**please make sure you change the password before doing so!** You can change
+the password by running the `passwd` command after logging in.
 
 This user is authorized for administrative access, so you can run commands as
 root by prefixing them with `sudo` or run `sudo su` to get a root shell.

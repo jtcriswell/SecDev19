@@ -76,8 +76,8 @@ to:
 4. **[Installing a GUI in the
    VM](https://github.com/jtcriswell/SecDev19/blob/master/docs/gui.md)**
 
-5. **[SSHing into the
-   VM](https://github.com/jtcriswell/SecDev19/blob/master/docs/ssh.md)**
+5. **[SSHing into the VM (with
+   screenshots)](https://github.com/jtcriswell/SecDev19/blob/master/docs/ssh.md)**
 
 6. **[Technical details about the VM's default
    configuration](https://github.com/jtcriswell/SecDev19/blob/master/docs/vmspecs.md)**
