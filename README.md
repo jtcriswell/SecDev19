@@ -67,8 +67,8 @@ to:
 1. **[How to download and install VirtualBox (skip if you already have VM
    software)](https://github.com/jtcriswell/SecDev19/blob/master/docs/vboxinstall.md)**
 
-2. **[How to import the VM image into
-   VirtualBox](https://github.com/jtcriswell/SecDev19/blob/master/docs/importvmimage.md)**
+2. **[How to import the VM image into VirtualBox (with
+   screenshots)](https://github.com/jtcriswell/SecDev19/blob/master/docs/importvmimage.md)**
 
 3. **[How to log in and use the
    VM](https://github.com/jtcriswell/SecDev19/blob/master/docs/loginanduse.md)**
