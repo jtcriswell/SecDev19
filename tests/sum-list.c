@@ -3,7 +3,7 @@
 
 float randf(float low, float high) {
     long int r = random();
-    return low + (float)r * ((high - low) / RAND_MAX);
+    return low + (float)((double)r * ((high - low) / (double)RAND_MAX));
 }
 
 void make_random_list(float* mat, size_t len) {
