@@ -78,7 +78,7 @@ getVoidPtrType (LLVMContext & C) {
 // Return value:
 //  A pointer to the checkMemory function is returned.
 //
-static Function *
+static FunctionCallee
 createRuntimeCheckFunc (Module & M) {
   //
   // Create the types needed for the declaration.
@@ -92,7 +92,7 @@ createRuntimeCheckFunc (Module & M) {
   //
   // Create the run-time check function.
   //
-  return cast<Function>(M.getOrInsertFunction ("checkMemory", FuncType));
+  return M.getOrInsertFunction ("checkMemory", FuncType);
 }
 
 //

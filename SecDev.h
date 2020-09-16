@@ -32,7 +32,7 @@ namespace llvm {
 
     private:
       // Private variables for this pass
-      Function * checkMemory;
+      FunctionCallee checkMemory;
 
       // Methods for transforming different instructions
       void visitLoadInst (LoadInst * LI);
